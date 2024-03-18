@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:sayur_ui_app/core.dart';
 import 'package:sayur_ui_app/module/login/widget/largeButton.dart';
 import 'package:sayur_ui_app/module/login/widget/socialMediaButton.dart';
@@ -32,10 +33,10 @@ class LoginView extends StatefulWidget {
               const SizedBox(
                 height: 20.0,
               ),
-              textFieldOutlined(
+              TextFieldOutlined(
                 hintText: "Masukan email kamu ya",
               ),
-              textFieldOutlined(
+              TextFieldOutlined(
                 hintText: "Password kamu",
               ),
               const SizedBox(
@@ -48,7 +49,10 @@ class LoginView extends StatefulWidget {
                 height: 36.0,
               ),
               Container(
-                child: Text("Login dengan akun :",style: TextStyle(fontSize: 14),),
+                child: Text(
+                  "Login dengan akun :",
+                  style: TextStyle(fontSize: 14),
+                ),
               ),
               const SizedBox(
                 height: 36.0,
@@ -59,35 +63,32 @@ class LoginView extends StatefulWidget {
               const SizedBox(
                 height: 29.0,
               ),
-               Container(
-      height: 50,
-      padding: const EdgeInsets.symmetric(horizontal: 15),
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          backgroundColor: const Color(0xFfffffff),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(5.0),
-          ),
-        ),
-        onPressed: () {},
-        child: Row(
-          children: [
-            Icon(
-              Icons.gamepad,
-              size: 24.0,
-              color: Colors.blue,
-            ),
-            Expanded(
-              child: Text(
-                "Sign In With Google",
-                style: TextStyle(color: Colors.black54),
-                textAlign: TextAlign.center,
+              Container(
+                height: 50,
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFFffffff),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5.0),
+                    ),
+                  ),
+                  onPressed: () {},
+                  child: Row(
+                    children: [
+                      SvgPicture.asset("assets/images/GoogleLogo.svg",
+                          width: 20, height: 20, semanticsLabel: 'Label'),
+                      Expanded(
+                        child: Text(
+                          "Sign In With Google",
+                          style: TextStyle(color: Colors.black54),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
-            ),
-          ],
-        ),
-      ),
-    ),
             ],
           ),
         ),

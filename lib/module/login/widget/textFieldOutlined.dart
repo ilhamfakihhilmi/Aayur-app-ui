@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class textFieldOutlined extends StatelessWidget {
+class TextFieldOutlined extends StatelessWidget {
   final String hintText;
-  const textFieldOutlined({
+  const TextFieldOutlined({
     Key? key,
     required this.hintText,
   }) : super(key: key);

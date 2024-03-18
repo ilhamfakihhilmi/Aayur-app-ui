@@ -3,12 +3,11 @@
 import 'package:flutter/material.dart';
 
 class SocialMediaButton extends StatelessWidget {
+  final String titles;
   const SocialMediaButton({
     Key? key,
     required this.titles,
   }) : super(key: key);
-
-  final String titles;
 
   @override
   Widget build(BuildContext context) {
