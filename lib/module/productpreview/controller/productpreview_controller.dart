@@ -1,11 +1,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:sayur_ui_app/core.dart';
-import '../view/navbar_view.dart';
+import '../view/productpreview_view.dart';
 
-class NavbarController extends State<NavbarView> {
-    static late NavbarController instance;
-    late NavbarView view;
+class ProductpreviewController extends State<ProductpreviewView> {
+    static late ProductpreviewController instance;
+    late ProductpreviewView view;
 
     @override
     void initState() {
