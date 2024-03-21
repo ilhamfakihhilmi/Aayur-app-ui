@@ -40,7 +40,12 @@ class IntroduceView extends StatefulWidget {
                 height: 50.0,
               ),
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => LoginView()),
+                  );
+                },
                 child: Container(
                   width: 168,
                   height: 43,

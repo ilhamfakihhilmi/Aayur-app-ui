@@ -27,14 +27,14 @@ class LoginView extends StatefulWidget {
               Container(
                 child: Text(
                   "Login",
-                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
+                  style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
                 ),
               ),
               const SizedBox(
                 height: 20.0,
               ),
               TextFieldOutlined(
-                hintText: "Masukan email kamu ya",
+                hintText: "Masukkan email kamu ya",
               ),
               TextFieldOutlined(
                 hintText: "Password kamu",
@@ -43,7 +43,7 @@ class LoginView extends StatefulWidget {
                 height: 36.0,
               ),
               LargeButton(
-                title: "Mulai berbelanja",
+                title: "Masuk berbelanja",
               ),
               const SizedBox(
                 height: 36.0,

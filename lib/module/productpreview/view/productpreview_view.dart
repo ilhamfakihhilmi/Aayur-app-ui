@@ -176,7 +176,7 @@ class ProductpreviewView extends StatefulWidget {
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white, // Background color
-                      elevation: 8, // Elevation
+                      elevation: 4, // Elevation
                       padding: EdgeInsets.symmetric(
                           horizontal: 20, vertical: 15), // Button padding
                       shape: RoundedRectangleBorder(

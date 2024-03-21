@@ -9,8 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
   flutter_svg: ^2.0.10+1
+  navbar_router: ^0.7.3
 
 dev_dependencies:
   flutter_test:

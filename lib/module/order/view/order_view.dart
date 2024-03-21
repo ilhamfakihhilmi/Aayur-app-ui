@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sayur_ui_app/core.dart';
+import 'package:sayur_ui_app/widget/bottomNav.dart';
 import '../controller/order_controller.dart';
 
 class OrderView extends StatefulWidget {
@@ -142,31 +143,36 @@ class OrderView extends StatefulWidget {
       ),
     ];
 
-    return Scaffold(
-      body: DefaultTabController(
-        length: tabViews.length,
-        child: Scaffold(
-          appBar: AppBar(
-            title: Text('Pesanan'),
-            bottom: TabBar(
-                labelColor: Colors.black,
-                indicatorColor: Color(0xff006440),
-                tabs: [
-                  Tab(
-                    text: "Dalam Proses (0)",
-                  ),
-                  Tab(text: "Selesai (0)"),
-                ]),
-            leading: IconButton(
-              icon: Icon(Icons.arrow_back, color: Colors.black),
-              onPressed: () => Navigator.of(context).pop(),
+    return Stack(
+      children: [
+        Scaffold(
+          body: DefaultTabController(
+            length: tabViews.length,
+            child: Scaffold(
+              appBar: AppBar(
+                title: Text('Pesanan'),
+                bottom: TabBar(
+                    labelColor: Colors.black,
+                    indicatorColor: Color(0xff006440),
+                    tabs: [
+                      Tab(
+                        text: "Dalam Proses (0)",
+                      ),
+                      Tab(text: "Selesai (0)"),
+                    ]),
+                leading: IconButton(
+                  icon: Icon(Icons.arrow_back, color: Colors.black),
+                  onPressed: () => Navigator.of(context).pop(),
+                ),
+              ),
+              body: TabBarView(
+                children: tabViews,
+              ),
             ),
           ),
-          body: TabBarView(
-            children: tabViews,
-          ),
         ),
-      ),
+        Align(alignment: Alignment.bottomCenter, child: MyHome())
+      ],
     );
   }
 

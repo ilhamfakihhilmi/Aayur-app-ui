@@ -131,6 +131,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.10.0"
+  navbar_router:
+    dependency: "direct main"
+    description:
+      name: navbar_router
+      sha256: "47963e489d328e7b288482c8c64b14817259026a1af15ac8efaadb1d5fe03a8e"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.7.3"
   path:
     dependency: transitive
     description:

@@ -5,115 +5,9 @@ import 'package:sayur_ui_app/module/home/widget/bannerHome.dart';
 import 'package:sayur_ui_app/module/home/widget/bannerProduct.dart';
 import 'package:sayur_ui_app/module/home/widget/cardProductView.dart';
 import 'package:sayur_ui_app/module/home/widget/categoryHome.dart';
+import 'package:sayur_ui_app/module/home/widget/dashline.dart';
 import 'package:sayur_ui_app/module/home/widget/diskonCard.dart';
 import '../controller/home_controller.dart';
-
-class MyHome extends StatefulWidget {
-  const MyHome({super.key});
-
-  @override
-  State<MyHome> createState() => _MyHomeState();
-}
-
-class _MyHomeState extends State<MyHome> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      clipBehavior: Clip.hardEdge,
-      height: 65,
-      margin: EdgeInsets.only(
-        right: 24,
-        left: 24,
-        bottom: 24,
-      ),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(20),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withAlpha(50),
-            blurRadius: 3,
-            spreadRadius: 2,
-          ),
-        ],
-      ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: navIcons.map((icon) {
-          int index = navIcons.indexOf(icon);
-          bool isSelected = selectedIndex == index;
-          return Material(
-            color: Colors.transparent,
-            child: GestureDetector(
-              onTap: () {
-                setState(() {
-                  selectedIndex = index;
-                });
-              },
-              child: Column(
-                children: [
-                  Container(
-                    alignment: Alignment.center,
-                    margin: EdgeInsets.only(
-                      top: 10,
-                      bottom: 0,
-                      left: 20,
-                      right: 20,
-                    ),
-                    child: Container(
-                      width: 45,
-                      height: 45,
-                      decoration: BoxDecoration(
-                          color: isSelected
-                              ? Color(0xff296859)
-                              : Colors.transparent,
-                          borderRadius: BorderRadius.circular(5)),
-                      child: ImageIcon(
-                        AssetImage(imageList[index]),
-                        color: isSelected
-                            ? Colors.white
-                            : Color.fromARGB(255, 198, 198, 198),
-                      ),
-                    ),
-                  ),
-                  // Text(
-                  //   navTitle[index],
-                  //   style: TextStyle(
-                  //     color: isSelected ? Colors.blue : Colors.grey,
-                  //     fontSize: 12,
-                  //   ),
-                  // ),
-                ],
-              ),
-            ),
-          );
-        }).toList(),
-      ),
-    );
-  }
-}
-
-final List<String> imageList = [
-  'assets/icons/homeIcon.png',
-  'assets/icons/donationIcon.png',
-  'assets/icons/moreIcon.png',
-  'assets/icons/userIcon.png',
-];
-
-List<Image> navIcons = [
-  Image.asset("assets/icons/homeIcon.png"),
-  Image.asset("assets/icons/donationIcon.png"),
-  Image.asset("assets/icons/donationIcon.png"),
-  Image.asset("assets/icons/donationIcon.png"),
-];
-
-List<String> navTitle = [
-  "Home",
-  "Sedekah",
-  "Profile",
-];
-int selectedIndex = 0;
 
 class HomeView extends StatefulWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -300,9 +194,19 @@ class HomeView extends StatefulWidget {
                               imageCategory: ('assets/images/lauk.png'),
                               title: ("Lauk"),
                             ),
-                            CategoryRow(
-                              imageCategory: ('assets/images/all.png'),
-                              title: ("Lainnya"),
+                            GestureDetector(
+                              onTap: () {
+                                // Navigasi ke layar baru saat Container ditekan
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => CategoryView()),
+                                );
+                              },
+                              child: CategoryRow(
+                                imageCategory: ('assets/images/all.png'),
+                                title: ("Lainnya"),
+                              ),
                             ),
                           ],
                         ),
@@ -332,20 +236,30 @@ class HomeView extends StatefulWidget {
                         ),
                       ),
                       //banner product================================
-                      BannerProduct(
-                        url: ('assets/images/bannerPL.png'),
-                        urlProduct1: ('assets/images/wortel.png'),
-                        title1: "Wortel",
-                        titleSub1: "Rp.5000",
-                        urlProduct2: ('assets/images/tempe.png'),
-                        title2: "Tempe",
-                        titleSub2: "Rp.5000",
-                        urlProduct3: ('assets/images/dagingAyam.png'),
-                        title3: "Dading Ayam",
-                        titleSub3: "Rp.15000",
-                        urlProduct4: ('assets/images/tahu.png'),
-                        title4: "Tahu",
-                        titleSub4: "Rp.5000",
+                      GestureDetector(
+                        onTap: () {
+                          // Navigasi ke layar baru saat Container ditekan
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ProductpreviewView()),
+                          );
+                        },
+                        child: BannerProduct(
+                          url: ('assets/images/bannerPL.png'),
+                          urlProduct1: ('assets/images/wortel.png'),
+                          title1: "Wortel",
+                          titleSub1: "Rp.5000",
+                          urlProduct2: ('assets/images/tempe.png'),
+                          title2: "Tempe",
+                          titleSub2: "Rp.5000",
+                          urlProduct3: ('assets/images/dagingAyam.png'),
+                          title3: "Dading Ayam",
+                          titleSub3: "Rp.15000",
+                          urlProduct4: ('assets/images/tahu.png'),
+                          title4: "Tahu",
+                          titleSub4: "Rp.5000",
+                        ),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(
@@ -454,6 +368,10 @@ class HomeView extends StatefulWidget {
                       const SizedBox(
                         height: 30.0,
                       ),
+                      DashLine(),
+                      const SizedBox(
+                        height: 30.0,
+                      ),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: Column(
@@ -468,8 +386,8 @@ class HomeView extends StatefulWidget {
                                 Spacer(),
                                 CardProductView(
                                   url: ("assets/images/tepung2.png"),
-                                  title: "Nugget ayam",
-                                  title2: "Rp. 25.000",
+                                  title: "Tepung",
+                                  title2: "Rp. 15.000",
                                 ),
                               ],
                             ),
@@ -480,8 +398,8 @@ class HomeView extends StatefulWidget {
                               children: [
                                 CardProductView(
                                   url: ("assets/images/wortel2.png"),
-                                  title: "Nugget ayam",
-                                  title2: "Rp. 25.000",
+                                  title: "Wortel",
+                                  title2: "Rp. 5.000",
                                 ),
                                 Spacer(),
                                 CardProductView(
@@ -498,14 +416,14 @@ class HomeView extends StatefulWidget {
                               children: [
                                 CardProductView(
                                   url: ("assets/images/bihun2.png"),
-                                  title: "Nugget ayam",
-                                  title2: "Rp. 25.000",
+                                  title: "Bihun",
+                                  title2: "Rp. 10.000",
                                 ),
                                 Spacer(),
                                 CardProductView(
                                   url: ("assets/images/dagingAyam2.png"),
-                                  title: "Nugget ayam",
-                                  title2: "Rp. 25.000",
+                                  title: "Daging Ayam",
+                                  title2: "Rp. 35.000",
                                 ),
                               ],
                             ),
@@ -513,7 +431,7 @@ class HomeView extends StatefulWidget {
                         ),
                       ),
                       const SizedBox(
-                        height: 120.0,
+                        height: 110.0,
                       ),
                     ],
                   ),

@@ -6,7 +6,8 @@
         "introduce",
         "category",
         "productpreview",
-        "order"
+        "order",
+        "bottomnavbar"
     ],
     "module_directory_name": "module",
     "experimental_mode": false,

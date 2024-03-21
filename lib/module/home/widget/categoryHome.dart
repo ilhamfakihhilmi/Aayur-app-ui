@@ -29,6 +29,7 @@ class CategoryRow extends StatelessWidget {
                       color: Color(0xFFF2F2F2),
                     ),
                   ),
+                  
                   Padding(
                     padding: const EdgeInsets.all(5.0),
                     child: Container(
