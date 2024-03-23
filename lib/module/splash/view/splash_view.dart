@@ -1,3 +1,4 @@
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:sayur_ui_app/core.dart';
 import '../controller/splash_controller.dart';
@@ -7,8 +8,9 @@ class SplashView extends StatefulWidget {
 
   Widget build(context, SplashController controller) {
     controller.view = this;
-    return Scaffold(
-      body: Center(
+
+    return AnimatedSplashScreen(
+      splash: Center(
         child: Container(
           padding: const EdgeInsets.all(10.0),
           child: Column(
@@ -17,8 +19,6 @@ class SplashView extends StatefulWidget {
             children: [
               Expanded(
                 child: Container(
-                  width: 286,
-                  height: 286,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
                         image: AssetImage("assets/images/logoSplash.png")),
@@ -38,6 +38,9 @@ class SplashView extends StatefulWidget {
           ),
         ),
       ),
+      nextScreen: IntroduceView(),
+      backgroundColor: Colors.white,
+      splashIconSize: 1000,
     );
   }
 

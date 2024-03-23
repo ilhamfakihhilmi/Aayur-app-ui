@@ -3,8 +3,7 @@ We believe, the class name must be unique.
 If there is a conflicting class name in this file,
 it means you have to rename it to something more unique.
 */
-export 'package:sayur_ui_app/module/bottomnavbar/controller/bottomnavbar_controller.dart';
-export 'package:sayur_ui_app/module/bottomnavbar/view/bottomnavbar_view.dart';
+
 export 'package:sayur_ui_app/module/category/controller/category_controller.dart';
 export 'package:sayur_ui_app/module/category/view/category_view.dart';
 export 'package:sayur_ui_app/module/category/widget/cardCategory.dart';

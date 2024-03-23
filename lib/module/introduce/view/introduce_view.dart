@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sayur_ui_app/core.dart';
+import 'package:sayur_ui_app/navigation_menu.dart';
 import '../controller/introduce_controller.dart';
 
 class IntroduceView extends StatefulWidget {
@@ -43,7 +44,7 @@ class IntroduceView extends StatefulWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => LoginView()),
+                    MaterialPageRoute(builder: (context) => NavBar()),
                   );
                 },
                 child: Container(
